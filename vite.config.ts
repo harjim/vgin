@@ -5,7 +5,7 @@ import { useEnv } from './src/utils/useEnv'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd())
+  const env = loadEnv(mode, process.cwd(), ['VITE_', 'APP_'])
   const ENV = useEnv(env)
   console.log(env, ENV)
   return {
