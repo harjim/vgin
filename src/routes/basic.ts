@@ -27,15 +27,19 @@ export const NotPermissionRoute: RouteRecordRaw[] = [
   }
 ]
 
-export const ServerErrorRoute: RouteRecordRaw[] = [
-  {
-    path: '/500',
-    name: '500',
-    component: ResultPage,
-    meta: {
-      status: '500'
-    }
+export const ServerErrorRoute: RouteRecordRaw = {
+  path: '/500',
+  name: '500',
+  component: ResultPage,
+  meta: {
+    status: '500'
   }
-]
+}
 
-export const whiteRoute = [...NotPermissionRoute, ...ServerErrorRoute, ...NotFoundRoute]
+export const LoginRoute: RouteRecordRaw = {
+  path: '/login',
+  name: 'Login',
+  component: () => import('@/views/system/LoginPage.vue')
+}
+
+export const whiteRoute = [LoginRoute, ...NotPermissionRoute, ServerErrorRoute, ...NotFoundRoute]

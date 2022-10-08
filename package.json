@@ -9,7 +9,7 @@
     "lint": "eslint . --ext .{vue,js,ts,jsx,tsx} --fix",
     "format": "prettier --write \"./**/*.{html, vue,ts,js,tsx,jsx,json,md}\"",
     "lint:style": "stylelint \"./**/*.{css,scss,vue,html}\" --fix",
-    "test": "vitest",
+    "test": "vitest run",
     "coverage": "vitest run --coverage",
     "preview": "vite preview",
     "prepare": "husky install"

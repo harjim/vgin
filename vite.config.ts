@@ -68,13 +68,13 @@ export default defineConfig(({ mode }) => {
       }) as PluginOption,
       createStyleImportPlugin({
         libs: [
-          {
-            libraryName: '@arco-design/web-vue',
-            esModule: true,
-            resolveStyle: (name) => {
-              return `@arco-design/web-vue/es/${name}/style/css.js`
-            }
-          }
+          // {
+          //   libraryName: '@arco-design/web-vue',
+          //   esModule: true,
+          //   resolveStyle: (name) => {
+          //     return `@arco-design/web-vue/es/${name}/style/css.js`
+          //   }
+          // }
         ]
       }),
       viteMockServe({
