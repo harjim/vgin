@@ -41,7 +41,7 @@ export default defineConfig(({ mode }) => {
         resolvers: [ArcoResolver({ sideEffect: true })]
       }),
       AutoImport({
-        imports: ['vue'],
+        imports: ['vue', 'pinia', 'vue-router'],
         dts: './src/types/auto-import.d.ts',
         eslintrc: {
           enabled: true,

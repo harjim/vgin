@@ -13,7 +13,11 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "types": ["node", "vitest/globals"],
-    "typeRoots": ["src/types"]
+    "typeRoots": ["src/types"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
