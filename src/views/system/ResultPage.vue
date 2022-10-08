@@ -1,5 +1,5 @@
 <template>
-  <a-result :status="status" :subtitle="subtitle">
+  <a-result :status="status" :subtitle="$t(`result.${status}`)">
     <template #extra>
       <a-space>
         <a-button type="text" @click="goBack">Back</a-button>
@@ -12,9 +12,9 @@
 <script setup lang="ts">
 const router = useRouter()
 const route = useRoute()
+const { t } = useI18n()
 
 const status = ref(route.meta.status)
-const subtitle = ref(route.meta.msg || '')
 
 const goBack = () => {
   router.back()

@@ -32,6 +32,11 @@ export default defineConfig(({ mode }) => {
   const ENV = useEnv(env)
 
   return {
+    define: {
+      __VUE_I18N_FULL_INSTALL__: true,
+      __VUE_I18N_LEGACY_API__: false,
+      __INTLIFY_PROD_DEVTOOLS__: false
+    },
     envPrefix: ['VITE_', 'APP_'],
     base: ENV.VITE_BASE,
     plugins: [
@@ -48,6 +53,7 @@ export default defineConfig(({ mode }) => {
           'vue',
           'pinia',
           'vue-router',
+          'vue-i18n',
           {
             axios: [['default', 'axios']]
           }
@@ -84,7 +90,6 @@ export default defineConfig(({ mode }) => {
     ],
     resolve: {
       alias: {
-        // 配置项目别名
         '@': resolve(__dirname, 'src')
       }
     },

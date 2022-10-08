@@ -7,8 +7,7 @@ export const NotFoundRoute: RouteRecordRaw[] = [
     name: '404',
     component: ResultPage,
     meta: {
-      status: '404',
-      msg: 'Whoops, that page is gone.'
+      status: '404'
     }
   },
   {
@@ -23,8 +22,7 @@ export const NotPermissionRoute: RouteRecordRaw[] = [
     name: '403',
     component: ResultPage,
     meta: {
-      status: '403',
-      msg: 'Access to this resource on the server is denied.'
+      status: '403'
     }
   }
 ]
@@ -35,8 +33,7 @@ export const ServerErrorRoute: RouteRecordRaw[] = [
     name: '500',
     component: ResultPage,
     meta: {
-      status: '500',
-      msg: 'This page isn’t working.'
+      status: '500'
     }
   }
 ]
