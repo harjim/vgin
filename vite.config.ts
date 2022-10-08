@@ -8,6 +8,7 @@ import Components from 'unplugin-vue-components/vite'
 import { defineConfig, loadEnv, PluginOption } from 'vite'
 import { createStyleImportPlugin } from 'vite-plugin-style-import'
 import Jsx from '@vitejs/plugin-vue-jsx'
+import { viteMockServe } from 'vite-plugin-mock'
 
 const useEnv = (env: Recordable<unknown>): ImportMetaEnv => {
   const ret: unknown = {}
@@ -69,6 +70,16 @@ export default defineConfig(({ mode }) => {
             }
           }
         ]
+      }),
+      viteMockServe({
+        mockPath: './mock',
+        localEnabled: ENV.APP_USE_MOCK,
+        prodEnabled: ENV.APP_USE_MOCK,
+        watchFiles: true,
+        injectCode: `
+        import { setupProdMockServer } from './mockProdServer.js'
+        setupProdMockServer()
+        `
       })
     ],
     resolve: {
