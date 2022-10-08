@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "@arco-design/web-vue": "^2.37.4",
+    "axios": "^1.1.2",
+    "nprogress": "^0.2.0",
     "pinia": "^2.0.22",
     "vue": "^3.2.37",
     "vue-router": "^4.1.5"
@@ -29,6 +31,7 @@
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@types/node": "^18.8.3",
+    "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
     "@vitejs/plugin-vue": "^3.1.0",
