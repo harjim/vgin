@@ -7,6 +7,7 @@ import { ArcoResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig, loadEnv, PluginOption } from 'vite'
 import { createStyleImportPlugin } from 'vite-plugin-style-import'
+import Jsx from '@vitejs/plugin-vue-jsx'
 
 const useEnv = (env: Recordable<unknown>): ImportMetaEnv => {
   const ret: unknown = {}
@@ -34,6 +35,7 @@ export default defineConfig(({ mode }) => {
     base: ENV.VITE_BASE,
     plugins: [
       vue(),
+      Jsx(),
       Components({
         dirs: ['src/components'],
         extensions: ['vue', 'tsx', 'jsx'],
@@ -91,7 +93,10 @@ export default defineConfig(({ mode }) => {
     },
     test: {
       globals: true,
-      environment: 'jsdom'
+      environment: 'jsdom',
+      transformMode: {
+        web: [/.[tj]sx$/]
+      }
     }
   }
 })
