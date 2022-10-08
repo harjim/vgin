@@ -4,6 +4,7 @@ import { createPinia } from 'pinia'
 import router from './routes'
 
 import 'nprogress/nprogress.css'
+import '@/styles/tailwind.scss'
 
 const app = createApp(App)
 

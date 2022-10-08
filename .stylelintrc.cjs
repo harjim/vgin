@@ -32,6 +32,12 @@ module.exports = {
         ignorePseudoClasses: ['deep']
       }
     ],
+    'scss/at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: ['tailwind']
+      }
+    ],
     // 指定样式的排序
     'order/properties-order': [
       'position',
