@@ -1,12 +1,14 @@
 import NProgress from 'nprogress'
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import { whiteRoute } from './basic'
 
-const routes = [
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Home',
     component: () => import('@/views/HomePage.vue')
-  }
+  },
+  ...whiteRoute
 ]
 
 const router = createRouter({
