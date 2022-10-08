@@ -13,7 +13,8 @@ export default defineConfig(({ mode }) => {
     base: ENV.VITE_BASE,
     plugins: [vue()],
     resolve: {
-      alias: {  // 配置项目别名
+      alias: {
+        // 配置项目别名
         '@': resolve(__dirname, 'src')
       }
     },
@@ -25,7 +26,7 @@ export default defineConfig(({ mode }) => {
         '/api/': {
           target: ENV.APP_BASE_PROXY,
           changeOrigin: true,
-          rewrite: path => path.replace(/^\/api\//, '')
+          rewrite: (path) => path.replace(/^\/api\//, '')
         }
       }
     }
