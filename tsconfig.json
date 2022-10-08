@@ -8,11 +8,11 @@
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "types": ["node"],
+    "types": ["node", "vitest/globals"],
     "typeRoots": ["src/types"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],

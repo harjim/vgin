@@ -5,10 +5,5 @@
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true
   },
-  "include": [
-    "vite.config.ts",
-    "src/utils/useEnv.ts",
-    "src/types/*.d.ts",
-    "./commitlint.config.cjs"
-  ]
+  "include": ["vite.config.ts", "src/types/env.d.ts", "./commitlint.config.cjs"]
 }
