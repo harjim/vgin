@@ -9,6 +9,6 @@ import '@/styles/tailwind.scss'
 
 const app = createApp(App)
 
-app.use(createPinia()).use(i18n).use(router)
+app.use(i18n).use(createPinia()).use(router)
 
 app.mount('#app')

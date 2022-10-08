@@ -60,7 +60,7 @@ export default defineConfig(({ mode }) => {
         ],
         dts: './src/types/auto-import.d.ts',
         eslintrc: {
-          enabled: true,
+          enabled: false,
           filepath: './.eslintrc-auto-import.json',
           globalsPropValue: true
         },

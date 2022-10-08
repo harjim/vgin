@@ -2,8 +2,8 @@
   <a-result :status="status" :subtitle="$t(`result.${status}`)">
     <template #extra>
       <a-space>
-        <a-button type="text" @click="goBack">Back</a-button>
-        <a-button type="primary" @click="goHome">Home</a-button>
+        <a-button type="text" @click="goBack">{{ $t('btn.back') }}</a-button>
+        <a-button type="primary" @click="goHome">{{ $t('btn.home') }}</a-button>
       </a-space>
     </template>
   </a-result>
@@ -12,7 +12,6 @@
 <script setup lang="ts">
 const router = useRouter()
 const route = useRoute()
-const { t } = useI18n()
 
 const status = ref(route.meta.status)
 

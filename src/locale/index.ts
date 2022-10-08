@@ -9,9 +9,8 @@ const messages = {
 const language = (navigator.language || 'en').toLocaleLowerCase()
 
 const i18n = createI18n({
-  locale:
-    localStorage.getItem('APP_LOCALE') || import.meta.env.APP_LOCALE || language.split('-')[0],
-  fallbackLocale: 'zh',
+  locale: localStorage.getItem('APP_LOCALE') || language.split('-')[0],
+  fallbackLocale: import.meta.env.APP_LOCALE,
   messages
 })
 
