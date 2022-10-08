@@ -2,7 +2,11 @@
 
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
-import { defineConfig, loadEnv } from 'vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import { ArcoResolver } from 'unplugin-vue-components/resolvers'
+import Components from 'unplugin-vue-components/vite'
+import { defineConfig, loadEnv, PluginOption } from 'vite'
+import { createStyleImportPlugin } from 'vite-plugin-style-import'
 
 const useEnv = (env: Recordable<unknown>): ImportMetaEnv => {
   const ret: unknown = {}
@@ -28,7 +32,36 @@ export default defineConfig(({ mode }) => {
   return {
     envPrefix: ['VITE_', 'APP_'],
     base: ENV.VITE_BASE,
-    plugins: [vue()],
+    plugins: [
+      vue(),
+      Components({
+        dirs: ['src/components'],
+        extensions: ['vue', 'tsx', 'jsx'],
+        dts: './src/types/components.d.ts',
+        resolvers: [ArcoResolver({ sideEffect: true })]
+      }),
+      AutoImport({
+        imports: ['vue'],
+        dts: './src/types/auto-import.d.ts',
+        eslintrc: {
+          enabled: true,
+          filepath: './.eslintrc-auto-import.json',
+          globalsPropValue: true
+        },
+        resolvers: [ArcoResolver()]
+      }) as PluginOption,
+      createStyleImportPlugin({
+        libs: [
+          {
+            libraryName: '@arco-design/web-vue',
+            esModule: true,
+            resolveStyle: (name) => {
+              return `@arco-design/web-vue/es/${name}/style/css.js`
+            }
+          }
+        ]
+      })
+    ],
     resolve: {
       alias: {
         // 配置项目别名

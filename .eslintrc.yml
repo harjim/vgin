@@ -11,6 +11,7 @@ extends:
   - plugin:@typescript-eslint/recommended
   - plugin:@typescript-eslint/recommended-requiring-type-checking
   - plugin:prettier/recommended
+  - './.eslintrc-auto-import.json'
 overrides: []
 parser: '@typescript-eslint/parser'
 parserOptions:
