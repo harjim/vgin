@@ -4,6 +4,8 @@ specifiers:
   '@arco-design/web-vue': ^2.37.4
   '@commitlint/cli': ^17.1.2
   '@commitlint/config-conventional': ^17.1.0
+  '@iconify-json/icon-park': ^1.1.6
+  '@iconify-json/icon-park-outline': ^1.1.6
   '@types/mockjs': ^1.0.7
   '@types/node': ^18.8.3
   '@types/nprogress': ^0.2.0
@@ -45,6 +47,7 @@ specifiers:
   tailwindcss: ^3.1.8
   typescript: ^4.6.4
   unplugin-auto-import: ^0.11.2
+  unplugin-icons: ^0.14.11
   unplugin-vue-components: ^0.22.8
   vite: ^3.1.0
   vite-plugin-mock: ^2.9.6
@@ -68,6 +71,8 @@ dependencies:
 devDependencies:
   '@commitlint/cli': registry.npmmirror.com/@commitlint/cli/17.1.2
   '@commitlint/config-conventional': registry.npmmirror.com/@commitlint/config-conventional/17.1.0
+  '@iconify-json/icon-park': registry.npmmirror.com/@iconify-json/icon-park/1.1.6
+  '@iconify-json/icon-park-outline': registry.npmmirror.com/@iconify-json/icon-park-outline/1.1.6
   '@types/mockjs': registry.npmmirror.com/@types/mockjs/1.0.7
   '@types/node': registry.npmmirror.com/@types/node/18.8.3
   '@types/nprogress': registry.npmmirror.com/@types/nprogress/0.2.0
@@ -106,6 +111,7 @@ devDependencies:
   tailwindcss: registry.npmmirror.com/tailwindcss/3.1.8
   typescript: registry.npmmirror.com/typescript/4.8.4
   unplugin-auto-import: registry.npmmirror.com/unplugin-auto-import/0.11.2
+  unplugin-icons: registry.npmmirror.com/unplugin-icons/0.14.11
   unplugin-vue-components: registry.npmmirror.com/unplugin-vue-components/0.22.8_vue@3.2.40
   vite: registry.npmmirror.com/vite/3.1.6_sass@1.55.0
   vite-plugin-mock: registry.npmmirror.com/vite-plugin-mock/2.9.6_h3gyuqmvymadjprbbjdlzetv3q
@@ -124,6 +130,15 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': registry.npmmirror.com/@jridgewell/gen-mapping/0.1.1
       '@jridgewell/trace-mapping': registry.npmmirror.com/@jridgewell/trace-mapping/0.3.9
+    dev: true
+
+  registry.npmmirror.com/@antfu/install-pkg/0.1.1:
+    resolution: {integrity: sha512-LyB/8+bSfa0DFGC06zpCEfs89/XoWZwws5ygEa5D+Xsm3OfI+aXQ86VgVG7Acyef+rSZ5HE7J8rrxzrQeM3PjQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@antfu/install-pkg/-/install-pkg-0.1.1.tgz}
+    name: '@antfu/install-pkg'
+    version: 0.1.1
+    dependencies:
+      execa: registry.npmmirror.com/execa/5.1.1
+      find-up: registry.npmmirror.com/find-up/5.0.0
     dev: true
 
   registry.npmmirror.com/@antfu/utils/0.5.2:
@@ -800,6 +815,43 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz}
     name: '@humanwhocodes/object-schema'
     version: 1.2.1
+    dev: true
+
+  registry.npmmirror.com/@iconify-json/icon-park-outline/1.1.6:
+    resolution: {integrity: sha512-NLwjpsuQAxsbSvcJ7vdNYeyouGs9ith3CHVXMVu/iTX4skjNhPDkjpLfjwPME4zdyWAskZH5RhNaL9+gD67MNQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@iconify-json/icon-park-outline/-/icon-park-outline-1.1.6.tgz}
+    name: '@iconify-json/icon-park-outline'
+    version: 1.1.6
+    dependencies:
+      '@iconify/types': registry.npmmirror.com/@iconify/types/2.0.0
+    dev: true
+
+  registry.npmmirror.com/@iconify-json/icon-park/1.1.6:
+    resolution: {integrity: sha512-Q5Cylogs+YEfvBS0WUVdMnlQ0ndYXuxHKwUr3N1jkfPM531ZOkiettQlL8LrjBv55WtZ2C/HmOA0d+Evre+PMA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@iconify-json/icon-park/-/icon-park-1.1.6.tgz}
+    name: '@iconify-json/icon-park'
+    version: 1.1.6
+    dependencies:
+      '@iconify/types': registry.npmmirror.com/@iconify/types/2.0.0
+    dev: true
+
+  registry.npmmirror.com/@iconify/types/2.0.0:
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@iconify/types/-/types-2.0.0.tgz}
+    name: '@iconify/types'
+    version: 2.0.0
+    dev: true
+
+  registry.npmmirror.com/@iconify/utils/2.0.1:
+    resolution: {integrity: sha512-t8IyICk25wgZL4YKn/2kYfjG5MGA6EWZlaUJZ1OEIku4V+kX9V900T5E4HIqS3hLyD6/RJET0zY4vxO9pHLHHw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@iconify/utils/-/utils-2.0.1.tgz}
+    name: '@iconify/utils'
+    version: 2.0.1
+    dependencies:
+      '@antfu/install-pkg': registry.npmmirror.com/@antfu/install-pkg/0.1.1
+      '@antfu/utils': registry.npmmirror.com/@antfu/utils/0.5.2
+      '@iconify/types': registry.npmmirror.com/@iconify/types/2.0.0
+      debug: registry.npmmirror.com/debug/4.3.4
+      kolorist: registry.npmmirror.com/kolorist/1.6.0
+      local-pkg: registry.npmmirror.com/local-pkg/0.4.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   registry.npmmirror.com/@intlify/core-base/9.2.2:
@@ -4306,6 +4358,12 @@ packages:
     version: 0.25.0
     dev: true
 
+  registry.npmmirror.com/kolorist/1.6.0:
+    resolution: {integrity: sha512-dLkz37Ab97HWMx9KTes3Tbi3D1ln9fCAy2zr2YVExJasDRPGRaKcoE4fycWNtnCAJfjFqe0cnY+f8KT2JePEXQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/kolorist/-/kolorist-1.6.0.tgz}
+    name: kolorist
+    version: 1.6.0
+    dev: true
+
   registry.npmmirror.com/levn/0.3.0:
     resolution: {integrity: sha512-0OO4y2iOHix2W6ujICbKIaEQXvFQHue65vUG3pb5EUomzPI90z9hsA1VsO/dbIIpC53J8gxM9Q4Oho0jrCM/yA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/levn/-/levn-0.3.0.tgz}
     name: levn
@@ -6601,6 +6659,36 @@ packages:
       magic-string: registry.npmmirror.com/magic-string/0.26.6
       unimport: registry.npmmirror.com/unimport/0.6.8
       unplugin: registry.npmmirror.com/unplugin/0.9.6
+    dev: true
+
+  registry.npmmirror.com/unplugin-icons/0.14.11:
+    resolution: {integrity: sha512-szr6QA1ILT4RrJCmtvW41m2KPwUCCIx8QNgwEmTehvzEkSLDrdEaBhKGMWb/qTe5/zwnfwrDGcFT/6pGOSHJcA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unplugin-icons/-/unplugin-icons-0.14.11.tgz}
+    name: unplugin-icons
+    version: 0.14.11
+    peerDependencies:
+      '@svgr/core': '>=5.5.0'
+      '@vue/compiler-sfc': ^3.0.2
+      vue-template-compiler: ^2.6.12
+      vue-template-es2015-compiler: ^1.9.0
+    peerDependenciesMeta:
+      '@svgr/core':
+        optional: true
+      '@vue/compiler-sfc':
+        optional: true
+      vue-template-compiler:
+        optional: true
+      vue-template-es2015-compiler:
+        optional: true
+    dependencies:
+      '@antfu/install-pkg': registry.npmmirror.com/@antfu/install-pkg/0.1.1
+      '@antfu/utils': registry.npmmirror.com/@antfu/utils/0.5.2
+      '@iconify/utils': registry.npmmirror.com/@iconify/utils/2.0.1
+      debug: registry.npmmirror.com/debug/4.3.4
+      kolorist: registry.npmmirror.com/kolorist/1.6.0
+      local-pkg: registry.npmmirror.com/local-pkg/0.4.2
+      unplugin: registry.npmmirror.com/unplugin/0.9.6
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   registry.npmmirror.com/unplugin-vue-components/0.22.8_vue@3.2.40:

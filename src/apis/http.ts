@@ -22,30 +22,52 @@ axios.interceptors.response.use(
 )
 
 interface HttpConfig {
+  url: string
+  params?: unknown
   showProgress?: boolean
 }
 
-export const get = async (url: string, params: unknown, config: HttpConfig) => {
-  if (config.showProgress) {
+type ResData = {
+  code: number
+  data: unknown
+  msg: string
+  status: boolean
+  timestamp: string
+}
+
+export const get = async ({ url, params, showProgress }: HttpConfig) => {
+  if (showProgress) {
     NProgress.start()
   }
   try {
-    return await axios.get(url, { params })
+    const { data, status } = await axios.get<ResData>(url, { params })
+    switch (status) {
+      case 200:
+        return data
+      default:
+        return data
+    }
   } finally {
-    if (config.showProgress) {
+    if (showProgress) {
       NProgress.done()
     }
   }
 }
 
-export const post = async (url: string, params: unknown, config: HttpConfig) => {
-  if (config.showProgress) {
+export const post = async ({ url, params, showProgress }: HttpConfig) => {
+  if (showProgress) {
     NProgress.start()
   }
   try {
-    return await axios.post(url, params)
+    const { data, status } = await axios.post<ResData>(url, params)
+    switch (status) {
+      case 200:
+        return data
+      default:
+        return data
+    }
   } finally {
-    if (config.showProgress) {
+    if (showProgress) {
       NProgress.done()
     }
   }

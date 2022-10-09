@@ -3,6 +3,28 @@ import Mock, { Random } from 'mockjs'
 
 export default [
   {
+    url: '/api/user/login',
+    method: 'get',
+    response: ({ query: { username } }) => {
+      if (username === 'admin') {
+        return {
+          code: 200,
+          data: 'vgin',
+          msg: 'ok',
+          status: true,
+          timestamp: Random.date('T')
+        }
+      }
+      return {
+        code: 400,
+        data: undefined,
+        msg: 'username is error',
+        status: false,
+        timestamp: Random.date('T')
+      }
+    }
+  },
+  {
     url: '/api/createUser',
     method: 'get',
     response: () => {

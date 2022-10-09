@@ -9,6 +9,8 @@ import { defineConfig, loadEnv, PluginOption } from 'vite'
 import { createStyleImportPlugin } from 'vite-plugin-style-import'
 import Jsx from '@vitejs/plugin-vue-jsx'
 import { viteMockServe } from 'vite-plugin-mock'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 
 const useEnv = (env: Recordable<unknown>): ImportMetaEnv => {
   const ret: unknown = {}
@@ -46,7 +48,16 @@ export default defineConfig(({ mode }) => {
         dirs: ['src/components'],
         extensions: ['vue', 'tsx', 'jsx'],
         dts: './src/types/components.d.ts',
-        resolvers: [ArcoResolver({ sideEffect: true })]
+        resolvers: [
+          ArcoResolver({ sideEffect: true }),
+          IconsResolver({
+            prefix: 'i',
+            alias: {
+              park: 'icon-park',
+              'park-outline': 'icon-park-outline'
+            }
+          })
+        ]
       }),
       AutoImport({
         imports: [
@@ -66,6 +77,10 @@ export default defineConfig(({ mode }) => {
         },
         resolvers: [ArcoResolver()]
       }) as PluginOption,
+      Icons({
+        autoInstall: true,
+        compiler: 'vue3'
+      }),
       createStyleImportPlugin({
         libs: [
           // {

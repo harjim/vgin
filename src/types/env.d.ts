@@ -10,6 +10,7 @@ interface ImportMetaEnv {
   readonly APP_BASE_URL: string
   readonly APP_USE_MOCK: boolean
   readonly APP_LOCALE: LocaleType
+  readonly APP_TITLE: string
 }
 
 interface ImportMeta {

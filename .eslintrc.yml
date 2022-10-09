@@ -29,3 +29,4 @@ plugins:
   - vue
 rules:
   prettier/prettier: error
+  '@typescript-eslint/no-unsafe-assignment': warn
